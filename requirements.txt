@@ -1,0 +1,16 @@
+# 贝叶斯优化（多目标 EHVI + 可行性加权）依赖
+# 安装: pip install -r requirements.txt
+#
+# 主索引用清华镜像（本机实测 ~30 MB/s，默认的阿里云镜像只有 ~0.2 MB/s）；
+# torch 用 PyTorch 官方 CPU 源（本机无 GPU，CPU 版省掉约 2.5 GB 的 nvidia 依赖）。
+--index-url https://pypi.tuna.tsinghua.edu.cn/simple/
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+torch==2.4.1+cpu
+botorch==0.11.3
+# 注意: botorch 0.11.3 硬绑定 gpytorch==1.12，不要升级成 1.11 或 1.13
+gpytorch==1.12
+linear-operator==0.5.2
+numpy==1.26.4
+scipy==1.13.1
+matplotlib==3.9.2
